@@ -7,13 +7,17 @@
             $scope.heading = [];
             $http({
                 method: 'GET',
-                url: 'http://jsonplaceholder.typicode.com/users',
-                params: {id: $scope.idSearch}                
-            }).success(function(data) {
-                console.log("pass");
+//                url: 'http://jsonplaceholder.typicode.com/users',
+//                params: {id: $scope.idSearch}                
+//                
+                url: 'http://localhost:3000/api/cil/',
+                params: {cil_id: $scope.idSearch}   
+
+            }).success(function(data) {                
                 $scope.heading = data; // response data 
             }).error(function(data) {
                 console.log("failed");
+                console.log(data);
             });
         };
 
